@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>生日快乐 — 给 躺平的绝成
+  的祝贺</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#FFF6F8;--accent:#FF7AB6;--soft:#FFEAF0;--text:#333;}
+    html,body{height:100%;margin:0;font-family:'Noto Sans SC',system-ui,sans-serif;background:radial-gradient(circle at 10% 10%,#fff,var(--bg));}
+    .page{min-height:100%;display:flex;align-items:center;justify-content:center;padding:30px;box-sizing:border-box;}
+    .card{width:980px;max-width:95vw;background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,250,255,0.98));border-radius:20px;padding:36px;box-shadow:0 12px 40px rgba(0,0,0,0.12);position:relative;overflow:hidden}
+    .greetings{text-align:center;margin-top:6px}
+    .greetings .chinese{font-size:48px;line-height:1;font-weight:700;color:var(--text);}
+    .greetings .russian{font-size:40px;line-height:1;margin-top:6px;font-family:'Dancing Script','Brush Script MT',cursive;color:var(--accent);text-shadow:0 3px 0 rgba(0,0,0,0.04);}
+    .stage{display:flex;gap:28px;align-items:center;justify-content:center;margin-top:18px}
+    .cake-wrap{width:360px;height:280px;display:flex;align-items:flex-end;justify-content:center;position:relative}
+    .cake{width:320px;height:220px}
+    .balloons{position:absolute;left:20px;top:10px;width:120px;height:220px;pointer-events:none}
+    .balloon{width:64px;height:84px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;position:absolute;transform-origin:center bottom;}
+    .balloon:after{content:'';position:absolute;left:50%;transform:translateX(-50%);width:2px;height:60px;background:rgba(0,0,0,0.06);bottom:-58px;border-radius:2px}
+    .b1{background:linear-gradient(180deg,#FFD1E6,#FF8FBC);left:0;animation:float1 6s ease-in-out infinite}
+    .b2{background:linear-gradient(180deg,#BEE7FF,#74C0FC);left:50px;top:20px;animation:float2 5.5s ease-in-out infinite}
+    .b3{background:linear-gradient(180deg,#FFFBC8,#FFE082);left:90px;top:40px;animation:float3 7s ease-in-out infinite}
+    @keyframes float1{0%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-18px) rotate(6deg)}100%{transform:translateY(0) rotate(-3deg)}}
+    @keyframes float2{0%{transform:translateY(0) rotate(4deg)}50%{transform:translateY(-24px) rotate(-4deg)}100%{transform:translateY(0) rotate(4deg)}}
+    @keyframes float3{0%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-28px) rotate(6deg)}100%{transform:translateY(0) rotate(-2deg)}}
+    #fw{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}
+    .controls{display:flex;gap:12px;justify-content:center;margin-top:16px}
+    .btn{background:var(--accent);border:none;color:white;padding:10px 16px;border-radius:12px;font-weight:700;cursor:pointer;box-shadow:0 6px 16px rgba(255,122,182,0.18)}
+    .btn.secondary{background:#FFD1E6;color:#333}
+    .footer{font-size:13px;color:#666;text-align:center;margin-top:18px}
+    @media (max-width:600px){.greetings .chinese{font-size:34px}.greetings .russian{font-size:26px}.cake-wrap{width:260px;height:200px}.cake{width:220px;height:160px}}
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="card">
+      <canvas id="fw"></canvas>
+      <div class="balloons" aria-hidden>
+        <div class="balloon b1"></div>
+        <div class="balloon b2"></div>
+        <div class="balloon b3"></div>
+      </div>
+      <div class="greetings">
+        <div class="chinese">生日快乐！</div>
+        <div class="russian">С днём рождения!</div>
+      </div>
+      <div class="stage">
+        <div class="cake-wrap" role="img" aria-label="生日蛋糕动画">
+          <svg class="cake" viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="160" cy="210" rx="120" ry="10" fill="#FFF3F6" opacity="0.9"/>
+            <rect x="40" y="110" width="240" height="70" rx="18" fill="#FFDDEB"/>
+            <path d="M40 110 q40 -30 80 0 t80 0 t80 0 v10 h-240z" fill="#FFFFFF" opacity="0.8"/>
+            <rect x="80" y="70" width="160" height="60" rx="14" fill="#FF8FBC"/>
+            <rect x="154" y="20" width="12" height="60" rx="3" fill="#FFF5C3"/>
+            <g id="flame" transform="translate(160,17)">
+              <path d="M0 0 C6 -6 10 -16 0 -28 C-10 -16 -6 -6 0 0 Z" fill="#FFD36E" opacity="0.95"/>
+              <path d="M0 -6 C3 -9 6 -14 0 -20 C-6 -14 -3 -9 0 -6 Z" fill="#FF7A4D" opacity="0.95"/>
+            </g>
+            <g opacity="0.95">
+              <rect x="60" y="130" width="6" height="2" rx="1" fill="#FFB3D6"/>
+              <rect x="120" y="140" width="6" height="2" rx="1" fill="#FFF8B3"/>
+              <rect x="200" y="128" width="6" height="2" rx="1" fill="#BEE7FF"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="controls">
+        <button id="fireworksBtn" class="btn secondary">点亮烟花 ✨</button>
+        <button id="downloadBtn" class="btn secondary">下载页面 (HTML)</button>
+      </div>
+      <div class="footer">🎵 生日歌已自动播放（8bit版 Happy Birthday）。</div>
+      <audio id="bgAudio" autoplay loop src="https://cdn.jsdelivr.net/gh/Arisztoteles/8bit-happy-birthday/happybirthday.mp3"></audio>
+    </div>
+  </div>
+  <script>
+    const canvas = document.getElementById('fw');
+    const ctx = canvas.getContext('2d');
+    function resize(){canvas.width = canvas.clientWidth; canvas.height = canvas.clientHeight}
+    window.addEventListener('resize', resize); resize();
+    const fireworks = [];
+    function random(min,max){return Math.random()*(max-min)+min}
+    class Firework{constructor(x,y,color){this.x=x;this.y=y;this.particles=[];for(let i=0;i<80;i++){this.particles.push({x:this.x,y:this.y,vx:random(-3,3),vy:random(-6,2),life:random(30,80),age:0,color})}} update(){this.particles.forEach(p=>{p.x+=p.vx; p.y+=p.vy; p.vy+=0.06; p.age++}); this.particles=this.particles.filter(p=>p.age<p.life)} draw(){this.particles.forEach(p=>{const t=p.age/p.life; ctx.globalAlpha=1-t; ctx.fillStyle=p.color; ctx.beginPath(); ctx.arc(p.x,p.y,Math.max(1,3*(1-t)),0,Math.PI*2); ctx.fill(); ctx.closePath(); ctx.globalAlpha=1})} isDone(){return this.particles.length===0}}
+    function spawnFirework(x,y){const colors=['#FFD36E','#FF8FBC','#BEE7FF','#C5FFA8','#FFB3D6','#A59CFF']; const c=colors[Math.floor(Math.random()*colors.length)]; fireworks.push(new Firework(x,y,c))}
+    function loop(){ctx.clearRect(0,0,canvas.width,canvas.height); for(let i=fireworks.length-1;i>=0;i--){fireworks[i].update(); fireworks[i].draw(); if(fireworks[i].isDone())fireworks.splice(i,1)} requestAnimationFrame(loop)} loop();
+    setInterval(()=>{const x=random(canvas.width*0.2,canvas.width*0.8);const y=random(canvas.height*0.05,canvas.height*0.45);spawnFirework(x,y)},3500);
+    document.getElementById('fireworksBtn').addEventListener('click',()=>{for(let i=0;i<6;i++){setTimeout(()=>spawnFirework(random(canvas.width*0.15,canvas.width*0.85),random(canvas.height*0.05,canvas.height*0.45)),i*120)}});
+    (function animateFlame(){const flame=document.getElementById('flame');let t=0;function f(){t+=0.12;const s=1+Math.sin(t)/18;const tx=Math.sin(t*1.7)/6;flame.setAttribute('transform','translate(160,17) scale('+s+') translate('+tx+',0)');requestAnimationFrame(f)}f()})();
+    document.getElementById('downloadBtn').addEventListener('click',()=>{const html='<!doctype html>\n'+document.documentElement.outerHTML;const blob=new Blob([html],{type:'text/html'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='happy_birthday_vup.html';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);});
+  </script>
+</body>
+</html>
